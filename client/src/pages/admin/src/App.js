@@ -1,21 +1,18 @@
+import React from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout';
 import UserList from './pages/UserList/UserList';
 import Home from './pages/Home/Home';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import UserEdit from './pages/UserEdit/UserEdit';
 import NewUser from './pages/NewUser/NewUser';
 import ProductList from './pages/ProductList/ProductList';
 import NewProduct from './pages/NewProduct/NewProduct';
 
-
-function App() {
+function RouterAdmin() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/admin",
       element: <Layout />,
       children: [
         {
@@ -45,19 +42,10 @@ function App() {
       ]
     },
   ]);
-  return (
-    <>
-    <RouterProvider router={router} />
-      {/* <TopBar />
-      <div className='container'>
-        <Sidebar/>
-        <div className="mainContentWrapper">
-          <Home />
-        </div>
-      </div> */}
 
-    </>
+  return (
+    <RouterProvider router={router} />
   );
 }
 
-export default App;
+export default RouterAdmin;
